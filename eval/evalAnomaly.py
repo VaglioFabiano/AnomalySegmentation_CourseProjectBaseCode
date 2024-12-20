@@ -78,7 +78,8 @@ def main():
     print ("Model and weights LOADED successfully")
     model.eval()
     
-    for path in glob.glob(os.path.expanduser(str(args.input[0]))):
+    image_paths = glob.glob(os.path.expanduser(args.input[0]))
+    for path in image_paths:
         print(path)
         images = torch.from_numpy(np.array(Image.open(path).convert('RGB'))).unsqueeze(0).float()
         images = images.permute(0,3,1,2)
