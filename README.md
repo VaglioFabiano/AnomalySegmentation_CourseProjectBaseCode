@@ -1,5 +1,7 @@
 # Real-Time-Anomaly-Segmentation [[Course Project](https://docs.google.com/document/d/1ElljsAprT2qX8RpePSQ3E00y_3oXrtN_CKYC6wqxyFQ/edit?usp=sharing)]
-This repository provides a starter-code setup for the Real-Time Anomaly Segmentation project of the Machine Learning Course. It consists of the code base for training ERFNet on the Cityscapes dataset and perform anomaly segmentation.
+This repository includes setup for the Real-Time Anomaly Segmentation project of the Machine learning Course.
+It consists of the code base for training ERFNet on Cistyscapes, and also has training files for BiSeNet and Enet.
+You will also find fine-tuned models starting from pretrained models, and also ERFNet with the addition of new losses, like IsoMaxPlus and LogitNormalization.
 
 ## Packages
 For instructions, please refer to the README in each folder:
@@ -19,4 +21,4 @@ For instructions, please refer to the README in each folder:
 
 ## Anomaly Inference:
 * The repo provides a pre-trained ERFNet on the cityscapes dataset that can be used to perform anomaly segmentation on test anomaly datasets.
-* Anomaly Inference Command:```python evalAnomaly.py --input '/home/shyam/ViT-Adapter/segmentation/unk-dataset/RoadAnomaly21/images/*.png```. Change the dataset path ```'/home/shyam/ViT-Adapter/segmentation/unk-dataset/RoadAnomaly21/images/*.png```accordingly.
+
