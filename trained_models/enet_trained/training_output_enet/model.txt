@@ -1,0 +1,542 @@
+DataParallel(
+  (module): ENet(
+    (initial_block): InitialBlock(
+      (main_branch): Conv2d(3, 13, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (ext_branch): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+      (batch_norm): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (downsample1_0): DownsamplingBottleneck(
+      (main_max1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (ext_conv1): Sequential(
+        (0): Conv2d(16, 4, kernel_size=(2, 2), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(4, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(4, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.01, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular1_1): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.01, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular1_2): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.01, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular1_3): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.01, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular1_4): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.01, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (downsample2_0): DownsamplingBottleneck(
+      (main_max1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(2, 2), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular2_1): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated2_2): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (asymmetric2_3): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(5, 1), stride=(1, 1), padding=(2, 0), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+        (3): Conv2d(32, 32, kernel_size=(1, 5), stride=(1, 1), padding=(0, 2), bias=False)
+        (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated2_4): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular2_5): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated2_6): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (asymmetric2_7): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(5, 1), stride=(1, 1), padding=(2, 0), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+        (3): Conv2d(32, 32, kernel_size=(1, 5), stride=(1, 1), padding=(0, 2), bias=False)
+        (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated2_8): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular3_0): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated3_1): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (asymmetric3_2): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(5, 1), stride=(1, 1), padding=(2, 0), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+        (3): Conv2d(32, 32, kernel_size=(1, 5), stride=(1, 1), padding=(0, 2), bias=False)
+        (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated3_3): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (regular3_4): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated3_5): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (asymmetric3_6): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(5, 1), stride=(1, 1), padding=(2, 0), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+        (3): Conv2d(32, 32, kernel_size=(1, 5), stride=(1, 1), padding=(0, 2), bias=False)
+        (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (dilated3_7): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(32, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): PReLU(num_parameters=1)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): PReLU(num_parameters=1)
+    )
+    (upsample4_0): UpsamplingBottleneck(
+      (main_conv1): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (main_unpool1): MaxUnpool2d(kernel_size=(2, 2), stride=(2, 2), padding=(0, 0))
+      (ext_conv1): Sequential(
+        (0): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_tconv1): ConvTranspose2d(32, 32, kernel_size=(2, 2), stride=(2, 2), bias=False)
+      (ext_tconv1_bnorm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (ext_tconv1_activation): ReLU()
+      (ext_conv2): Sequential(
+        (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): ReLU()
+    )
+    (regular4_1): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): ReLU()
+    )
+    (regular4_2): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): ReLU()
+    )
+    (upsample5_0): UpsamplingBottleneck(
+      (main_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (main_unpool1): MaxUnpool2d(kernel_size=(2, 2), stride=(2, 2), padding=(0, 0))
+      (ext_conv1): Sequential(
+        (0): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_tconv1): ConvTranspose2d(16, 16, kernel_size=(2, 2), stride=(2, 2), bias=False)
+      (ext_tconv1_bnorm): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (ext_tconv1_activation): ReLU()
+      (ext_conv2): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): ReLU()
+    )
+    (regular5_1): RegularBottleneck(
+      (ext_conv1): Sequential(
+        (0): Conv2d(16, 4, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv2): Sequential(
+        (0): Conv2d(4, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_conv3): Sequential(
+        (0): Conv2d(4, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (ext_regul): Dropout2d(p=0.1, inplace=False)
+      (out_activation): ReLU()
+    )
+    (transposed_conv): ConvTranspose2d(16, 20, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+  )
+)
